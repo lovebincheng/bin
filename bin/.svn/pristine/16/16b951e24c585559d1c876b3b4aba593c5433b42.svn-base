@@ -1,0 +1,29 @@
+/**
+ *登录业务处理
+ **/
+var login = {
+    login_cheke :function () {
+        //获取登录信息
+        var username = $('input[name="username"]').val();
+        var password = $('input[name="password"]').val();
+        var srcode = $('input[name="sr_code"]').val();
+        var url ='./login/login';
+        var data = {username:username,password:password,srcode:srcode}
+        if(!username){
+            dialog.error('用户名不能为空');
+            return false;
+        }
+        if(!password){
+            dialog.error('密码不能为空');
+            return false;
+        }
+        if(!srcode){
+            dialog.error('验证码不能为空');
+            return false;
+        }
+        $.post(url,data,function (result) {
+            
+        })
+
+    }
+}
